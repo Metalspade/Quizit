@@ -134,7 +134,7 @@ function showQuestion() {
     if (timeLeft <= 0) {
       clearInterval(timer);
       alert("Time's up!");
-      window.location.replace("http://127.0.0.1:5500/Quizit/index.html");
+      window.location.replace("http://127.0.0.1:5501/index.html");
     }
   }, 1000);
 }
