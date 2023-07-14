@@ -1,0 +1,110 @@
+body {
+    background-image: url(https://images.pexels.com/photos/1089438/pexels-photo-1089438.jpeg?auto=compress&cs=tinysrgb&w=1600);
+    background-repeat: no-repeat;
+    background-size: cover;
+    font-family: Arial, sans-serif;
+    background-color: #f2f2f2;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .app {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+
+  h1 {
+    text-align: center;
+    margin-top: 20px;
+    color: conic-gradient(
+        #553c9a 0%, #553c9a 33%, #ee4b2b 33%, #ee4b2b 66%, #00c2cb 66%, #00c2cb 99%
+      );
+  }
+  .form {
+    height: 550px;
+    background: #c0d5c9;
+    width: 90%;
+    max-width: 600px;
+    margin: 200px auto 0;
+    border-radius: 15px;
+    padding: 30px;
+    box-shadow: 0 0 50px rgba(255, 255, 255, 0.5);
+  }
+
+  label {
+    display: block;
+    margin-bottom: 10px;
+    color: #333;
+  }
+
+  input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+  }
+
+  button {
+    padding: 10px 20px;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    border-radius: 15px;
+    font-size: 16px;
+    cursor: pointer;
+  }
+
+  button:hover {
+    background-color: #555;
+  }
+  .rules {
+    margin-top: 20px;
+    text-align: left;
+  }
+  
+  .rules ul {
+    list-style-type: disc;
+    padding-left: 20px;
+  }
+/* styling for message  */
+*  styles for the scrolling text container */
+.msgscrol {
+    width: 250px;
+    height: 45px;
+    border-radius: 25px;
+    overflow: hidden;
+    position: relative;
+    margin: 0 auto;
+    border: 5px solid black; /* Add border properties */
+  }
+  
+  .msgscrol span {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 28px;
+    color: black;
+    display: block;
+    white-space: nowrap;
+    margin: 1px 0;
+    animation: 4s txtscrl linear infinite;
+    top: 60%;
+    right: 100px;
+    transform: translateX(100%);
+    text-shadow: 0 0 10px #ffffff, 0 0 20px #ffffff, 0 0 30px #ffffff, 0 0 40px #ffffff, 0 0 50px #ffffff, 0 0 60px #ffffff, 0 0 70px #ffffff; /* Add text shadow properties */
+  }
+  
+  
+/* keyframes for the scrolling text */
+        @keyframes txtscrl {
+            0% {
+                transform: translateX(130px)
+            }
+
+            100% {
+                transform: translateX(-290px)
+            }
+        }
