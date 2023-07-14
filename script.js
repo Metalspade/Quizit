@@ -91,13 +91,13 @@ const questions = [
   }
 
       ];
-
+//used to get the variables of the question, answer buttons , next button , restart button and timer
 const questionElement = document.getElementById("question");
 const answerButtons = document.getElementById("answer-buttons");
 const nextButton = document.getElementById("next-button");
 const restartButton = document.getElementById("Restart");
 const timerElement = document.getElementById("timer");
-
+// function is used to restart everything and will restart the quiz
 let currentQuestionIndex = 0;
 let score = 0;
 let timer;
@@ -108,13 +108,14 @@ function startQuiz() {
   nextButton.innerHTML = "Next";
   showQuestion();
 }
-
+// show each question be shown afer the next button is clicked 
 function showQuestion() {
   resetState();
   let currentQuestion = questions[currentQuestionIndex];
   let questionNo = currentQuestionIndex + 1;
   questionElement.innerHTML = questionNo + ". " + currentQuestion.question;
 
+// this part of the function will display the answer
   currentQuestion.answer.forEach((answer) => {
     const button = document.createElement("button");
     button.innerHTML = answer.text;
@@ -125,7 +126,7 @@ function showQuestion() {
     }
     button.addEventListener("click", selectAnswer);
   });
-
+//this part of the function will start the timer
   let timeLeft = 30; // Set the desired time limit here
   timerElement.innerHTML = `Time left: ${timeLeft}s`;
   timer = setInterval(() => {
@@ -134,11 +135,11 @@ function showQuestion() {
     if (timeLeft <= 0) {
       clearInterval(timer);
       alert("Time's up!");
-      window.location.replace("http://127.0.0.1:5501/index.html");
+      window.location.replace("index.html");
     }
   }, 1000);
 }
-
+// Hides the default answer buttons
 function resetState() {
   nextButton.style.display = "none";
   while (answerButtons.firstChild) {
@@ -156,7 +157,8 @@ function selectAnswer(e) {
   } else {
     selectedBtn.classList.add("incorrect");
   }
-
+  //only allows one click and will show right or wrong answer 
+    //and will disable the click for answer and display the next button
   Array.from(answerButtons.children).forEach((button) => {
     if (button.dataset.correct === "true") {
       button.classList.add("correct");
