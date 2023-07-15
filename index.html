@@ -13,34 +13,39 @@
   
   <div class="form">
     <div class="msgscrol">
-        <span>Welcome to Quizit...</span>
+      <span id="welcome-message">Welcome to Quizit...</span>
     </div>
-      <form id="player-form" action="quiz.html">
-    <label for="name">Enter Your Name:</label>
-    <input type="text" id="name" name="name" required>
-       <h2>Quiz Rules</h2>
-    <div class=rules>
-    <ul><li>Please Enter your Name to start the quiz</li>
-    <li>Once Clicked on the Start Quiz button the Quiz will start</li>
-<li>
-    You have 30 seconds to read and answer a Question
-</li>
-<li>
-    You need 6 correct answers to pass the Quiz
-</li>
-<li>
-    You will get 1 point for each correct answer
-</li>
-<li>
-    If you run out of time the quiz will restart
-</li>
-<li>
-    Goodluck!
-</li>
-</ul>
-    </div>
-    <button id="start-button" type="submit">Start Quiz</button>
-  </form>
+        <form id="player-form" action="quiz.html">
+      <label for="name">Enter Your Name:</label>
+      <input type="text" id="name" name="name" required>
+      <h2>Quiz Rules</h2>
+      <div class="rules">
+        <ul>
+          <li>Please enter your name to start the quiz</li>
+          <li>Once clicked on the "Start Quiz" button, the quiz will start</li>
+          <li>You have 30 seconds to read and answer a question</li>
+          <li>You need 6 correct answers to pass the quiz</li>
+          <li>You will get 1 point for each correct answer</li>
+          <li>If you run out of time, the quiz will restart</li>
+          <li>Good luck!</li>
+        </ul>
+      </div>
+      <button id="start-button" type="submit">Start Quiz</button>
+    </form>
+    <script>
+      document.getElementById("player-form").addEventListener("submit", function(event) {
+        event.preventDefault(); // Prevent form submission
+    
+        const nameInput = document.getElementById("name");
+        const playerName = nameInput.value;
+    
+        if (playerName.trim() !== "") {
+          alert("Welcome, Good Luck: " + playerName);
+          window.location.href = "quiz.html";
+        }
+      });
+    </script>
+    
   </div>
 </body>
 </html>
